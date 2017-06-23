@@ -1,37 +1,20 @@
 import React from 'react';
 
 class App extends React.Component {
-
-    constructor(){
-        super();
-
-        this.state = {
-            data:[
-                {
-                    "id":1,
-                    "name":"vishal"
-                },
-                {
-                    "id":2,
-                    "name":"krinal"
-                },
-                {
-                    "id":3,
-                    "name":"nivaan"
-                }
-            ]
-        }
-    }
-
     render() {
         return (
             <div>
-                <Header />
-                <Table data={this.state.data} border={1}/>
+                <h1>{this.props.header}</h1>
+                <h1>{this.props.content}</h1>
             </div>
         );
     }
 }
+
+  App.defaultProps={
+        header:"header data", 
+        content:"content data"
+    }
 
 class Table extends React.Component{
     render(){
